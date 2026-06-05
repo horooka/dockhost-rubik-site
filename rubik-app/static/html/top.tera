@@ -1,0 +1,19 @@
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="static/pikme-b.css"/>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+  <title>Rubik's Cube</title>
+</head>
+<body>
+  <div class="page">
+    <h1>Top solvers</h1>
+
+    {% if top_users is defined %}
+        {% for user in top_users %}
+            <li>{{ user.username }}: {{ user.solved }} total (easy {{ user.easy }}, medium {{ user.medium }}, hard {{ user.hard }})</li>
+        {% endfor %}
+    {% else %}
+        <h1>There are no users yet</h1>
+    {% endif %}
+  </div>
+</body>

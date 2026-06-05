@@ -1,0 +1,25 @@
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="static/pikme-b.css"/>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+  <title>Rubik's Cube</title>
+</head>
+<body>
+  <div class="page">
+    <h1>Profile</h1>
+    <h1>Username: {{ username }}</h1>
+    <p>Solved: {{ solved }}</p>
+
+    <form action="/logout" method="POST">
+      <button type="submit">Logout</button>
+    </form>
+
+    <a href="/rubik">
+      <button>Solve</button>
+    </a>
+
+    <a href="/top">
+      <button>Top</button>
+    </a>
+  </div>
+</body>

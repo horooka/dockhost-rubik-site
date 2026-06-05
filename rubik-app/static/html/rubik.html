@@ -1,0 +1,71 @@
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="/static/pikme-b.css"/>
+  <link rel="stylesheet" href="/static/cube.css"/>
+  <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+  <title>Rubik's Cube</title>
+</head>
+<body class="cube-page">
+  <div class="page cube-layout">
+    <nav class="cube-nav">
+      <a href="/profile" class="leave-link">← Back to profile</a>
+    </nav>
+
+    <header class="cube-header">
+      <h1>Rubik's Cube</h1>
+      <p class="prompt">{{ prompt }}</p>
+      <div class="meta">
+        <span id="difficulty-tag" class="tag">{{ difficulty }}</span>
+        <span>Moves: <strong id="move-count">0</strong></span>
+        <span id="status" class="status">Loading…</span>
+      </div>
+    </header>
+
+    <div id="cube-view" class="cube-view"></div>
+
+    <details class="panel" open>
+      <summary>Scramble</summary>
+      <code id="scramble-text">{{ scramble }}</code>
+    </details>
+
+    <details class="panel" open>
+      <summary>Move shortcuts</summary>
+      <ul id="move-help" class="help-list">
+        <li><kbd>R L U D F B</kbd> — clockwise face turn</li>
+        <li><kbd>M</kbd> — middle slice (same direction as L)</li>
+        <li><kbd>x y z</kbd> — whole-cube rotation (regrip)</li>
+        <li><kbd>Shift + key</kbd> — counter-clockwise (prime)</li>
+        <li><kbd>Ctrl + key</kbd> — half turn (180°)</li>
+        <li><kbd>drag</kbd> — orbit camera around cube</li>
+      </ul>
+    </details>
+
+    <details class="panel">
+      <summary>Algorithm macros</summary>
+      <ul id="macro-list" class="help-list"></ul>
+    </details>
+
+    <form id="solve-form" action="/rubik-check" method="POST">
+      <input type="hidden" name="rubik_id" value="{{ rubik_id }}">
+      <input type="hidden" name="difficulty" value="{{ difficulty }}">
+      <input type="hidden" name="facelets" id="facelets-input" value="">
+      <input type="hidden" name="moves" id="moves-input" value="0">
+    </form>
+  </div>
+
+  <script>
+    window.RUBIK = {{ rubik_json | safe }};
+  </script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+      "/cube/state.js": "/static/js/cube/state.js",
+      "/cube/renderer.js": "/static/js/cube/renderer.js",
+      "/cube/controls.js": "/static/js/cube/controls.js"
+    }
+  }
+  </script>
+  <script type="module" src="/static/js/cube/app.js"></script>
+</body>

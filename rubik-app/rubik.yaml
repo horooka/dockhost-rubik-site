@@ -1,0 +1,57 @@
+macros:
+  - key: "0"
+    label: Inverse right
+    moves: "U R U' R'"
+  - key: "1"
+    label: First-left
+    moves: "L' U L"
+  - key: "2"
+    label: First-right
+    moves: "R U' R'"
+  - key: "3"
+    label: Second-left
+    moves: "U L' U L U2 L' U L"
+  - key: "4"
+    label: Second-right
+    moves: "U' R U' R' U2 R U' R'"
+  - key: "5"
+    label: Second-right-up
+    moves: "R U R' U' R U R' U' R U R' U"
+  - key: "6"
+    label: PLL-up
+    moves: "R U' R D2 R' U R D2 R' R'"
+  - key: "8"
+    label: Sune-left
+    moves: "M2 U' M U2 M' U' M2"
+  - key: "7"
+    label: Sune-right
+    moves: "M2 U M U2 M' U M2"
+
+scrambles:
+  - scramble: "R U F R' U' F'"
+    difficulty: easy
+    prompt: "Solve the cube — use keys below for moves and number keys for algorithms"
+
+  - scramble: "R U R' U' R' F R F'"
+    difficulty: easy
+    prompt: "Solve the cube"
+
+  - scramble: "F R U R' U' F'"
+    difficulty: easy
+    prompt: "Solve the cube"
+
+  - scramble: "R U R' F' R U R' U' R' F R2 U' R'"
+    difficulty: medium
+    prompt: "Medium scramble — good luck"
+
+  - scramble: "R U R' U R U2 R' U R U2 R'"
+    difficulty: medium
+    prompt: "Solve the cube"
+
+  - scramble: "R U R' F R' F2 U' F U F' R2 U R' U' R U R' U' F'"
+    difficulty: hard
+    prompt: "Hard scramble"
+
+  - scramble: "R U R' U' R' F R F2 R U R' U' R' F R F' R U R' U R U2 R' U'"
+    difficulty: hard
+    prompt: "Hard scramble"
